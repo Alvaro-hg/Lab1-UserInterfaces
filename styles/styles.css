@@ -1,0 +1,139 @@
+/* Specify the font that will be used for the whole file */
+@font-face{
+  font-family: Roboto;
+  src: url(../images/RobotoSlab.ttf);
+}
+
+/* Set of designs that will affect all the elements */
+* {
+  margin: 0;
+  font-family: Roboto;
+}
+
+body {
+  color: #D2D2D2;
+}
+
+/*################### START HEADER ###################*/
+
+/* Specify the format of the elements inside the header */
+#header-container {
+  background-color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#header-container > div {
+  margin: 10px;
+}
+
+/*----- START LOGO -----*/
+
+#logo-container {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/*Set the max size to 3/4 of real size */
+#logo {
+  max-width: 74.25px;
+  max-height: 79.5px;
+}
+
+/*----- END LOGO -----*/
+
+#name-container {
+  text-align: center;
+  font-size: 30px;
+  color: #FFFFFF;
+}
+
+/*################### END HEADER ###################*/
+
+/*################### START NAVBAR ###################*/
+
+#navbar {
+  overflow: hidden;
+  background-color: #F7AD3F;
+}
+
+#navbar a {
+  float: left;
+  color: #F2F2D2;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#navbar a:hover {
+  background-color: #D58B1D;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #000000;
+  color: white;
+}
+
+#navbar a.float-right {
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  #navbar a.float-right {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #navbar a {
+    float: none;
+    display: block;
+  }
+
+  #navbar a.float-right {
+    float: none;
+    display: block;
+  }
+}
+
+/*################### END NAVBAR ###################*/
+
+#map {
+  width:100%;
+  height:auto;
+}
+
+
+#search-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #F7AD3F;
+}
+
+#search-title {
+  color: #000000;
+  margin: 10px;
+  padding: 5px;
+}
+
+#stext {
+  width: 40%;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+#sbutton {
+  box-sizing: border-box;
+  background-color: #000000;
+  color: #FFFFFF;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 25px;
+}
