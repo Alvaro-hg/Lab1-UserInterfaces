@@ -63,41 +63,71 @@ body {
   float: left;
   color: #F2F2D2;
   text-align: center;
-  padding: 15px 15px;
+  padding: 15px;
   text-decoration: none;
   font-size: 20px;
 }
 
+.icon {
+  text-align: center;
+  padding: 10px 7px 0px 0px;
+}
+
 #navbar a:hover {
   background-color: #D58B1D;
-  color: black;
+  color: #000000;
 }
 
 #navbar a.active {
   background-color: #000000;
-  color: white;
+  color: #FFFFFF;
 }
 
 #navbar a.float-right {
   float: right;
 }
 
-@media screen and (max-width: 768px) {
-  #navbar a.float-right {
-    float: left;
-  }
+#experiences {
+  float: left;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 600px) {
-  #navbar a {
-    float: none;
-    display: block;
-  }
+#experiences #expbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: #F2F2D2;
+  padding: 22px 15px 13px 15px;
+  background-color: #F7AD3F;
+}
 
-  #navbar a.float-right {
-    float: none;
-    display: block;
-  }
+#experiences:hover #expbtn {
+  background-color: #D58B1D;
+}
+
+#exp-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  background-color: #D58B1D;
+  width: 100%;
+  z-index: 1;
+}
+
+#exp-content a {
+  float: left;
+  color: #F2F2D2;
+  text-decoration: none;
+}
+
+#exp-content a:hover {
+  background-color: #B3690B;
+  color: #000000;
+}
+
+#experiences:hover #exp-content {
+  display: block;
 }
 
 /*################### END NAVBAR ###################*/
@@ -127,6 +157,7 @@ body {
   margin: 10px;
   padding: 5px;
   border-radius: 25px;
+  border: none;
 }
 
 #sbutton {
@@ -136,4 +167,114 @@ body {
   margin: 10px;
   padding: 5px;
   border-radius: 25px;
+  border: none;
+}
+
+#footer-container {
+  background-color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#flogo-container {
+  padding: 5px;
+  box-sizing: border-box;
+  flex-grow: 2;
+  text-align: center;
+}
+
+#cr-container {
+  flex-grow: 6;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+#social-container {
+  flex-grow: 2;
+  display: grid;
+  grid-template-areas:
+    'instagram twitter facebook'
+    'TandC TandC TandC'
+    'FAQ FAQ FAQ';
+  grid-gap: 10px;
+  text-align: center;
+}
+
+
+#instagram { grid-area: instagram; margin: 20px 0px 10px 0px;}
+#twitter { grid-area: twitter; margin: 20px 0px 10px 0px;}
+#facebook { grid-area: facebook; margin: 20px 0px 10px 0px;}
+#TandC { grid-area: TandC; }
+#FAQ { grid-area: FAQ; }
+
+#instagram > span {
+  border-radius: 30px;
+  border: 1px solid #FFFFFF;
+  font-size: 20px;
+  padding: 10px 12px 10px 12px;
+  box-sizing: border-box;
+}
+
+#twitter > span {
+  border-radius: 30px;
+  border: 1px solid #FFFFFF;
+  font-size: 20px;
+  padding: 10px 12px 10px 12px;
+  box-sizing: border-box;
+}
+
+#facebook > span {
+  border-radius: 30px;
+  border: 1px solid #FFFFFF;
+  font-size: 20px;
+  padding: 10px 12px 10px 12px;
+  box-sizing: border-box;
+}
+
+#social-container > div {
+  text-align: center;
+}
+
+#instagram > span > a{ color: #FFFFFF; }
+#twitter > span > a{ color: #FFFFFF; }
+#facebook > span > a{ color: #FFFFFF; }
+#TandC > a{ color: #FFFFFF; }
+#FAQ > a{ color: #FFFFFF; }
+
+
+@media screen and (max-width: 768px) {
+  #navbar a.float-right {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #navbar a {
+    float: none;
+    display: block;
+  }
+
+  #navbar a.float-right {
+    float: none;
+    display: block;
+  }
+
+  #footer-container {
+    flex-direction: column;
+  }
+
+  #social-container {
+    order: 1;
+    width: 100%;
+  }
+
+  #flogo-container {
+    order: 2;
+  }
+
+  #cr-container {
+    order: 3;
+  }
 }
