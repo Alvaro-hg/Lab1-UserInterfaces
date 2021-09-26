@@ -90,6 +90,7 @@ body {
 #experiences {
   float: left;
   overflow: hidden;
+  text-align: center;
 }
 
 #experiences #expbtn {
@@ -103,6 +104,7 @@ body {
 
 #experiences:hover #expbtn {
   background-color: #D58B1D;
+  color: #000000;
 }
 
 #exp-content {
@@ -168,6 +170,27 @@ body {
   padding: 5px;
   border-radius: 25px;
   border: none;
+}
+
+
+/*Experiences*/
+#experiences-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-container {
+  width: 33.33%;
+}
+
+.image-container {
+  max-width: 90%;
+  max-height: auto;
 }
 
 #footer-container {
@@ -248,6 +271,10 @@ body {
   #navbar a.float-right {
     float: left;
   }
+
+  .exp-container {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -259,6 +286,15 @@ body {
   #navbar a.float-right {
     float: none;
     display: block;
+  }
+
+  #experiences {
+    float: none;
+    display: block;
+  }
+
+  .exp-container {
+    width: 100%;
   }
 
   #footer-container {
