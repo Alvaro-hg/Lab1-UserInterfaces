@@ -139,7 +139,6 @@ body {
   height:auto;
 }
 
-
 #search-container {
   width: 80%;
   margin: auto;
@@ -176,21 +175,40 @@ body {
 /*Experiences*/
 #experiences-container {
   width: 80%;
-  margin: auto;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 3%;
   justify-content: center;
+  padding: 10px;
+  margin: 30px auto;
 }
 
 .exp-container {
-  width: 33.33%;
+  width: 31.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #D2D2D2;
+  border-radius: 25px;
+  box-shadow: 5px 10px 10px #F7AD3F;
+}
+
+.exp-container > div {
+  padding: 10px;
+  color: #FFFFFF;
+}
+
+.justified-text {
+  text-align: justify;
+  width: 90%;
 }
 
 .image-container {
   max-width: 90%;
-  max-height: auto;
+  height: auto;
 }
 
 #footer-container {
@@ -273,7 +291,7 @@ body {
   }
 
   .exp-container {
-    width: 50%;
+    width: 48%;
   }
 }
 
