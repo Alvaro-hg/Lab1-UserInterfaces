@@ -357,6 +357,7 @@ of all the links and the structure of them*/
   margin-top: 8px;
   width: 100%;
   height: auto;
+  border: none;
 }
 
 .column video {
