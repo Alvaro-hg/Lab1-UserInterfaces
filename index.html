@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
+<!-- Specify the language fo the webpage-->
+<html lan="en">
 
+<!--########### Head section ###########-->
+<!-- Define charset the styles path and the title of page-->
 <head>
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="./styles/styles.css">
 	<title>Food & Travel - Home</title>
 </head>
 
+<!-- ########## Main page section ##########-->
 <body>
+	<!-- ###### Section for the header -->
+	<!-- It contains the logo of the webpage and the title o it-->
 	<header>
 		<div id="header-container">
 			<div id="logo-container">
@@ -17,26 +24,33 @@
 			</div>
 		</div>
 	</header>
+
+	<!-- ###### Navigation section ######-->
+	<!-- This section contains the links to move through the webpage and the log in and sugn up buttons -->
 	<nav>
 		<div id="navbar">
+				<!-- First of all the common links home, contact and about with respective icons-->
     		<a class="active" href="#top"><ion-icon class="icon" name="home-outline"></ion-icon>Home</a>
     		<a href=""><ion-icon class="icon" name="information-outline"></ion-icon>About Us</a>
     		<a href="#footer-container"><ion-icon class="icon" name="mail-outline"></ion-icon>Contact</a>
     		<a class="float-right" href=""><ion-icon class="icon" name="person-circle-outline"></ion-icon>Log In</a>
     		<a class="float-right"  href=""><ion-icon class="icon" name="log-in-outline"></ion-icon>Sign Up</a>
+				<!-- This part is used to specify the dropdown button with the experinces that are reflected in the map-->
     		<div id="experiences">
     			<button id="expbtn"><ion-icon name="caret-down-outline"></ion-icon>Experiences</button>
     			<div id="exp-content">
       				<a href="./Godai.html">Godai Menorca</a>
-      				<a href="">Nusr-et Dubai</a>
-      				<a href="">Burger & Beyond London</a>
+      				<a href="./Nusr-et.html">Nusr-et Dubai</a>
+      				<a href="./B&B.html">Burger & Beyond London</a>
     			</div>
   			</div>
   		</div>
 	</nav>
 
+	<!-- ###### Map section ######-->
+	<!-- This section contains the main map with the mapping element to get the points of the experiences-->
 	<div>
-    	<img class="header-images" src="./images/Map.png" usemap="#worldmap">
+    	<img class="header-images" src="./images/Map.png" usemap="#worldmap" alt="map">
     	<map name="worldmap">
   			<area shape="rect" coords="706,255,730,290" alt="London" href="B&B.html">
   			<area shape="rect" coords="705,330,725,365" alt="Spain" href="Godai.html">
@@ -44,6 +58,8 @@
 		</map>
   	</div>
 
+		<!-- ###### Search section ######-->
+		<!-- This section contains the serach bar for the experiences-->
   	<div id="search-container">
   		<h2 id="search-title">Look for our experiences</h2>
   		<form>
@@ -52,13 +68,17 @@
   		</form>
   	</div>
 
+		<!--###### Experiences section ######-->
+		<!-- Thsi section constains all the experinces with their short description and title. The Experiences
+		are always done the same way (<title>, image, descrption)-->
   	<div id="experiences-container">
+			<!-- Godai experience-->
   		<div class="exp-container">
   			<div>
   				<h2>GODAI MENORCA</h2>
   			</div>
   			<div>
-  				<img class="image-container" src="./images/Godai.png">
+  				<img class="image-container" src="./images/Godai.png" alt="godai restaurant">
   			</div>
   			<div class="justified-text">
   				<p>Godai is an exclusive japaneese restaurant located in the 5 stars hotel
@@ -67,12 +87,13 @@
 					Menorca products with the techniques and procedures of the japanese cuisine</p>
   			</div>
   		</div>
+			<!-- Nusr-et experience-->
   		<div class="exp-container">
   			<div>
   				<h2>NUSR-ET</h2>
 				</div>
 				<div>
-			  	<img class="image-container" src="./images/nurs-et.jpg">
+			  	<img class="image-container" src="./images/nurs-et.jpg" alt="nusret restaurant">
 		  	</div>
 		  	<div class="justified-text">
   				<p>Nusr-et restaurants are worldwide known for its spectacular meat preparation,
@@ -81,12 +102,13 @@
 					the salt.</p>
 				</div>
   		</div>
+			<!-- Diverxo experience-->
   		<div class="exp-container">
   			<div>
   				<h2>DIVERXO</h2>
 			</div>
   			<div>
-  				<img class="image-container" src="./images/Diverxo.jpg">
+  				<img class="image-container" src="./images/Diverxo.jpg" alt="diverxo restaurant">
 			</div>
   			<div class="justified-text">
   				<p>Located in the holtel NH Eurobulding, it is the only three Michelín stars
@@ -95,12 +117,13 @@
 					David Muñoz.</p>
 			</div>
   		</div>
+			<!-- Hostaria experience-->
   		<div class="exp-container">
   			<div>
   				<h2>HOSTARIA AL GLADIATORE</h2>
 			</div>
   			<div>
-  				<img class="image-container" src="./images/hostaria.jpg">
+  				<img class="image-container" src="./images/hostaria.jpg" alt="hostaria restaurant">
 			</div>
   			<div class="justified-text">
   				<p>Hostaria al Gladiatore is situated in the historic center, right in front of
@@ -109,12 +132,13 @@
 					have a huge wine selection.</p>
 			</div>
   		</div>
+			<!-- Restauranr 58 section -->
   		<div class="exp-container">
   			<div>
   				<h2>RESTAURANT 58</h2>
 			</div>
 			<div>
-  				<img class="image-container" src="./images/restaurant58.png">
+  				<img class="image-container" src="./images/restaurant58.png" alt="restaurant 58">
 			</div>
 			<div class="justified-text">
   				<p>Located at the first floor of the Eiffel Tower the restaurant 58 offers an
@@ -123,72 +147,81 @@
 					This restaurant will allow you to enjoy the sights from the top.</p>
 			</div>
   		</div>
+			<!-- Ginza experience-->
   		<div class="exp-container">
   			<div>
   				<h2>GINZA KOJYU</h2>
 			</div>
 			<div>
-  				<img class="image-container" src="./images/ginza.jpg">
+  				<img class="image-container" src="./images/ginza.jpg" alt="ginza restaurant">
 			</div>
 			<div class="justified-text">
-  				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-				molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-				numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-				optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+  				<p>Ginza Kojyu is a japanese restaurant owned by the Chef Patron Toru Okuda
+						who opened it in 2003. He named the restaurant after his close friend Nishioka Koju,
+						a renowned Japanese potter, whose exquisite pieces can be admired at the restaurant.
+						The restaurant is situated on the fourth floor of an anonymous building in the Ginza district.</p>
 			</div>
   		</div>
+			<!-- Al's Italian experience-->
   		<div class="exp-container">
   			<div>
   				<h2>AL'S ITALIAN BEEF</h2>
 			</div>
   			<div>
-  				<img class="image-container" src="./images/Alsbeef.jpg">
+  				<img class="image-container" src="./images/Alsbeef.jpg" alt="al's restaurant">
 			</div>
   			<div class="justified-text">
-  				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-				molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-				numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-				optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+  				<p>Al's has been the sandwich of Chicago for 82 years, a true food icon, winner
+						of over 150 culinary & critic awards, and has become a destination for people
+						from across the world. It appeared in the documentary "History of food in America"
+						and it is one of the most famous restaurants in Chicago.</p>
 			</div>
   		</div>
+			<!-- Saint peter experience-->
   		<div class="exp-container">
   			<div>
   				<h2>SAINT PETER</h2>
 			</div>
   			<div>
-  				<img class="image-container" src="./images/saintpeter.jpg">
+  				<img class="image-container" src="./images/saintpeter.jpg" alt="Saint peter restaurant">
 			</div>
   			<div class="justified-text">
-  				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-				molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-				numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-				optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+  				<p>Saint Peter is an Australian Fish Eatery. They serve sustainable seafood prepared
+						expertly and served simply in a relaxed restaurant environment. In addition, they take
+						the great Australian seafood tradition to previously unexplored heights. Everyday is a
+						new different experience since they frequently change their dishes.</p>
 			</div>
   		</div>
+			<!-- Burger & Beyond experience-->
   		<div class="exp-container">
   			<div>
   				<h2>BURGER & BEYOND</h2>
 			</div>
   			<div>
-  				<img class="image-container" src="./images/B&B.png">
+  				<img class="image-container" src="./images/B&B.png" alt="Burger and beyond restaurant">
 			</div>
   			<div class="justified-text">
-  				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-				molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-				numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-				optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+  				<p>Essex-born and London-based, they’re a burger truck turned raved-about restaurant
+						in the heart of Shoreditch. To find the perfect patty, they drew inspiration from burger
+						joints all over the world, from London to Miami, Vegas to LA, Berlin to NYC. So they
+						know a good burger when they bite one.</p>
 			</div>
   		</div>
   	</div>
 
+		<!-- ###### Footer section ######-->
+		<!--This section will contain the footer with the logo copyright and contact links-->
   	<footer>
   		<div id="footer-container">
+				<!-- This part contains the logo of the footer-->
   			<div id="flogo-container">
 				<img id="logo" src="./images/Logo.png" alt="logo">
 			</div>
+			<!-- This part contains the copyright text-->
 			<div id="cr-container">
 				FOOD & TRAVEL © 2021
 			</div>
+			<!-- This part contains the grid for the contact links-->
 			<div id="social-container">
 				<div id="instagram">
 					<span><a href="url"><ion-icon name="logo-instagram"></ion-icon></a></span>
@@ -205,6 +238,7 @@
   		</div>
   	</footer>
 
+	<!-- THis section is used to be able to put icons in the page-->
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

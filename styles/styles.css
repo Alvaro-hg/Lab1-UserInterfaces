@@ -207,7 +207,7 @@ body {
 
 .exp-container > div {
   padding: 10px;
-  color: #FFFFFF;
+  color: #D58B1D;
 }
 
 .justified-text {
@@ -385,4 +385,15 @@ body {
   margin-top: 8px;
   width: 100%;
   height: auto;
+}
+
+.column video {
+  margin-top: 8px;
+  width: 100%;
+  height: auto;
+}
+
+#media{
+  padding: 0 8px;
+  color: #000000;
 }
