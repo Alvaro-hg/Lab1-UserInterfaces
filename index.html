@@ -33,7 +33,7 @@
     		<a class="active" href="#top"><ion-icon class="icon" name="home-outline"></ion-icon>Home</a>
     		<a href=""><ion-icon class="icon" name="information-outline"></ion-icon>About Us</a>
     		<a href="#footer-container"><ion-icon class="icon" name="mail-outline"></ion-icon>Contact</a>
-    		<a class="float-right" href=""><ion-icon class="icon" name="person-circle-outline"></ion-icon>Log In</a>
+    		<button id="login-button" class="float-right"><ion-icon class="icon" name="person-circle-outline"></ion-icon>Log In</button>
     		<a class="float-right"  href=""><ion-icon class="icon" name="log-in-outline"></ion-icon>Sign Up</a>
 				<!-- This part is used to specify the dropdown button with the experinces that are reflected in the map-->
     		<div id="experiences">
@@ -47,15 +47,16 @@
   		</div>
 	</nav>
 	<!-- ###### Popup section ######-->
-	<div class="popup">
+	<div id="login-popup">
 		<div class="popup-content">
-			<ion-icon name="close-outline" class="close"></ion-icon>
+			<!--<ion-icon name="close-outline" class="close"></ion-icon>-->
+			<button class="close">&times;</button>
 			<div id="login-container">
 				<ion-icon name="person-circle-outline" id="login-icon"></ion-icon>
 				<form id="login-form">
 					<input type="text" placeholder="Username">
 					<input type="password" placeholder="Password">
-					<button type="button">Log in</button>
+					<button type="button" id="login-b">Log in</button>
 				</form>
 			</div>
 		</div>
