@@ -442,7 +442,7 @@ of all the links and the structure of them*/
 
 
 /*################### START POPUP ###################*/
-#login-popup{
+.popup{
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
@@ -455,8 +455,6 @@ of all the links and the structure of them*/
 }
 
 .popup-content{
-  height: 350px;
-  width: 300px;
   background-color: #FFFFFF;
   color: #000000;
   border-radius: 10px;
@@ -464,6 +462,8 @@ of all the links and the structure of them*/
 }
 
 #login-container{
+  height: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -487,10 +487,66 @@ of all the links and the structure of them*/
   border-radius: 10px;
 }
 
-input{
+.login-input{
   margin: 20px auto;
   display: block;
   width: 80%;
+}
+
+#signup-container{
+  height: 600px;
+  width: 500px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.signup-input{
+  margin: 0px 0px 10px 0px;
+  width: 100%;
+}
+
+#signup-form{
+  width: 95%;
+}
+
+#signup-title{
+  margin: 20px auto 10px auto;
+}
+
+.signup-subtitle{
+  padding: 5px 0px;
+}
+
+.signup-info{
+  margin: 10px 0px;
+  background-color: #F7AD3F;
+  border-radius: 10px;
+  padding: 5px 40px;
+}
+
+.signup-input{
+  border-radius: 10px;
+  border: none;
+}
+
+#option{
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  width: 60%;
+}
+
+#option > input {
+  background-color: #F7AD3F;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
 }
 
 .close{

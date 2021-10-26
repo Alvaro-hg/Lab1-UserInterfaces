@@ -34,7 +34,7 @@
     		<a href=""><ion-icon class="icon" name="information-outline"></ion-icon>About Us</a>
     		<a href="#footer-container"><ion-icon class="icon" name="mail-outline"></ion-icon>Contact</a>
     		<button id="login-button" class="float-right"><ion-icon class="icon" name="person-circle-outline"></ion-icon>Log In</button>
-    		<a class="float-right"  href=""><ion-icon class="icon" name="log-in-outline"></ion-icon>Sign Up</a>
+    		<button id="signup-button" class="float-right"><ion-icon class="icon" name="log-in-outline"></ion-icon>Sign Up</button>
 				<!-- This part is used to specify the dropdown button with the experinces that are reflected in the map-->
     		<div id="experiences">
     			<button id="expbtn"><ion-icon name="caret-down-outline"></ion-icon>Experiences</button>
@@ -47,16 +47,69 @@
   		</div>
 	</nav>
 	<!-- ###### Popup section ######-->
-	<div id="login-popup">
+	<div class="popup" id="login-popup">
 		<div class="popup-content">
 			<!--<ion-icon name="close-outline" class="close"></ion-icon>-->
-			<button class="close">&times;</button>
+			<button class="close" id="login-close">&times;</button>
 			<div id="login-container">
 				<ion-icon name="person-circle-outline" id="login-icon"></ion-icon>
 				<form id="login-form">
-					<input type="text" placeholder="Username">
-					<input type="password" placeholder="Password">
-					<button type="button" id="login-b">Log in</button>
+					<input class="login-input" id="lemail" type="email" placeholder="Email" required>
+					<input class="login-input" id="lpassword" type="password" placeholder="Password" required>
+					<input type="button" id="login-b" name="log in button" value="Log in">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup" id="signup-popup">
+		<div class="popup-content">
+			<button class="close" id="signup-close">&times;</button>
+			<div id="signup-container">
+				<h2 id="signup-title">Create an account</h2>
+				<form id="signup-form">
+					<div class="signup-info">
+						<h3 class="signup-subtitle">Account information:</h3>
+						<p>Username:</p>
+						<input class="signup-input" id="username" type="text" required>
+						<p>Password:</p>
+						<input class="signup-input" id="password" type="password" placeholder="Valid letters and numbers and max length 8" pattern="^[a-z0-9A-Z]{1,8}$" required>
+					</div>
+					<div class="signup-info">
+						<h3 class="signup-subtitle">Personal information:</h3>
+						<p>Name:</p>
+						<input class="signup-input" id="name" type="text" required>
+						<p>Surname:</p>
+						<input class="signup-input" id="surname" type="text" required>
+						<p>Email:</p>
+						<input class="signup-input" id="email" type="email" required>
+						<p>Birthdate:</p>
+						<input class="signup-input" id="dob" type="date" required>
+						<p>Profile picture: (optional)</p>
+						<input class="signup-input" type="file" value="Select image" capture>
+					</div>
+					<div class="signup-info">
+						<p class="signup-subtitle">I'm interested in...</p>
+						<input type="checkbox" id="interest1" name="interest1" value="American">
+						<label for="interest1">American food<label><br>
+						<input type="checkbox" id="interest2" name="interest2" value="Asian">
+						<label for="interest2">Asian food<label><br>
+						<input type="checkbox" id="interest3" name="interest3" value="Mediterranean">
+						<label for="interest3">Mediterranean food<label><br>
+						<input type="checkbox" id="interest4" name="interest4" value="High-cuisine">
+						<label for="interest4">High-cuisine food<label><br>
+						<input type="checkbox" id="interest5" name="interest5" value="Fast-food">
+						<label for="interest5">Fast-food<label><br>
+					</div>
+					<div class="signup-info">
+						<p class="signup-subtitle">Terms of Use:</p>
+						<input type="checkbox" id="terms-of-use" name="terms-of-use" value="Terms" required>
+						<label for="terms-of-use">I have read and accepted the Terms of Use<label>
+					</div>
+					<div id="option">
+						<input type="button" id="submit-signup" name="create-a" value="Create account">
+						<input type="reset" id="reset" name="clear-a" value="Clear">
+					</div>
 				</form>
 			</div>
 		</div>
