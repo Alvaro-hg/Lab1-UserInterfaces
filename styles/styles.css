@@ -589,3 +589,58 @@ of all the links and the structure of them*/
   font-size: 1.25rem;
   font-weight: bold;
 }
+
+#user-logged{
+  background-color: #F7AD3F;
+  float: right;
+  display: none;
+}
+
+#user-logged:hover #user-menu{
+  background-color: #D58B1D;
+  color: #000000;
+  display: flex;
+}
+
+#logged-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#logged-container ion-icon{
+  font-size: 20px;
+  padding: 20px 10px;
+  color: #F2F2F2;
+}
+
+#image-container {
+  width: 55px;
+  height: 55px;
+}
+
+#user-username {
+  padding: 20px 20px;
+  font-size: 20px;
+  color: #F2F2F2;
+  box-sizing: border-box;
+}
+
+#user-pic {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+#user-menu, #user-logged {
+  background-color: #00FF00;
+}
+
+#user-menu {  
+  display: none;
+  position: absolute;
+  right: 0;
+  padding: 20px 45px;
+  text-align: center;
+}
