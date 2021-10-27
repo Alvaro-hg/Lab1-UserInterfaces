@@ -86,10 +86,30 @@ hover or when the page is the current one*/
   color: #FFFFFF;
 }
 
-#navbar a.float-right {
+.navbar-button {
+  float: left;
+  display: flex;
+  padding: 20px 15px;
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 20px;
+  background-color: #F7AD3F;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #D58B1D;
+  color: #000000;
+}
+
+.navbar-button.float-right {
   float: right;
 }
 
+.navbar-button ion-icon {
+  padding: 5px 7px 0px 0px;
+}
 /*Dropdown section for the different experiences*/
 #experiences {
   float: left;
@@ -375,7 +395,7 @@ of all the links and the structure of them*/
 
 /*################### START RESPONSIVENESS ###################*/
 @media screen and (max-width: 768px) {
-  #navbar a.float-right {
+  #navbar .navbar-button.float-right {
     float: left;
   }
 
@@ -398,7 +418,7 @@ of all the links and the structure of them*/
     display: block;
   }
 
-  #navbar a.float-right {
+  #navbar .navbar-button.float-right {
     float: none;
     display: block;
   }
@@ -436,6 +456,11 @@ of all the links and the structure of them*/
   .column {
     flex: 100%;
   }
+
+  #signup-container{
+    width: 400px;
+    height: 500px;
+  }
 }
 
 /*################### END RESPONSIVENESS ###################*/
@@ -459,6 +484,7 @@ of all the links and the structure of them*/
   color: #000000;
   border-radius: 10px;
   position: relative;
+  display: flex;
 }
 
 #login-container{
@@ -547,6 +573,7 @@ of all the links and the structure of them*/
   border: none;
   padding: 5px 20px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .close{

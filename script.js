@@ -36,16 +36,15 @@ $(document).ready(function(){
     }
     let result = setCookie(email, name, surname, username, password, dob, interest, 30);
     if (result == 0){
-      console.log("Enters");
-      $("#signup-form").trigger("reset");
+      $("#signup-form.signup-info").trigger("reset");
     } else {
+      changeToUser();
       closePopUp("#signup-popup");
     }
   })
   $("#login-b").click(function(){
     let lemail = document.getElementById("lemail").value;
     let lpassword = document.getElementById("lpassword").value;
-    console.log("clicked");
     checkCookie(lemail, lpassword);
   })
 });
@@ -60,6 +59,10 @@ function closePopUp(id){
   $(id).fadeOut("slow");
   $(id).css("display", "none");
   $("body").css("overflow", "auto");
+}
+
+function changeToUser(){
+  $(".navbar-button").hide()
 }
 
 function setCookie(email, name, surname, username, password, dob, interests, exdays){
