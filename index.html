@@ -112,7 +112,7 @@
 						<p>Birthdate:</p>
 						<input class="signup-input" id="dob" type="date" required>
 						<p>Profile picture: (optional)</p>
-						<input class="signup-input" id="profile-img" type="file" capture>
+						<input class="signup-input" id="profile-img" type="file">
 					</div>
 					<div class="signup-info">
 						<p class="signup-subtitle">I'm interested in...</p>
@@ -166,7 +166,7 @@
 						<p>Change username:</p>
 						<input class="profile-input" id="new-username" type="text">
 						<p>Change profile picture:</p>
-						<input class="profile-input" id="new-img" type="file" capture>
+						<input class="profile-input" id="new-img" type="file">
 						<p class="signup-subtitle">New interests</p>
 						<input type="checkbox" id="new-interest1" name="new-interest1" value="American">
 						<label for="new-interest1">American food</label><br>
@@ -187,6 +187,49 @@
 		</div>
 	</div>
 
+	<div class="popup" id="my-experiences-popup">
+		<div class="popup-content" id="mexp-container">
+			<button class="close" id="mexp-close">&times;</button>
+			<h2 id="mexp-title">My experiences</h2>
+			<div id="mexp-content">
+				<div><input type="button" id="add-mexp" name="add-my-experience" value="Add a new experience"></div>
+				<div id="list-experiences">
+					<div class="new-exp">
+						<div class="new-exp-img-container">
+							<img class="new-exp-img" src="./images/B&B.png" alt="experience">
+						</div>
+						<div class="new-exp-text">
+							<div class="loc-and-title">
+								<h3 class="new-exp-title">Burger & Beyond</h3>
+								<h5>(London)</h5>
+							</div>
+							<p class="new-exp-desc">Mucho texto si que hay mucho texto. Mucho texto si que hay mucho texto.
+							Mucho texto si que hay mucho texto. Mucho texto si que hay mucho texto. Mucho texto si que hay mucho texto.
+							Mucho texto si que hay mucho texto. Mucho texto si que hay mucho texto. Mucho texto si que hay mucho texto.
+							Mucho texto si que hay mucho texto.</p>
+						</div>
+						<div class="new-exp-delete">
+							<ion-icon class="del-new-exp" name="trash"></ion-icon>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="add-exp">
+				<h3 id="mexp-subtitle">Add new experience</h3>
+				<form id="mexp-form">
+					<p>Title for the experience:</p>
+					<input type="text" id="mexp-new-title" class="mexp-input" required>
+					<p>Location:</p>
+					<input type="text" id="mexp-place" class="mexp-input" required>
+					<p>Description:</p>
+					<textarea id="mexp-desc" rows="8" cols="50" maxlength="1000" form="mexp-form" required></textarea>
+					<p>Experience image:</p>
+					<input type="file" id="mexp-img" class="mexp-input" required>
+					<input type="submit" id="mexp-button" name="add-new" value="Add the experience">
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<!-- ###### Map section ######-->
 	<!-- This section contains the main map with the mapping element to get the points of the experiences-->

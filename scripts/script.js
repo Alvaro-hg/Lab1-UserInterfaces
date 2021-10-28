@@ -39,6 +39,18 @@ $(document).ready(function(){
   $(".open-with-img").click(function(){
     openPopUp("#bb-popup");
   })
+  $("#my-experiences").click(function(){
+    openPopUp("#my-experiences-popup");
+  })
+  $("#mexp-close").click(function(){
+    closePopUp("#my-experiences-popup");
+    $("#mexp-content").css("display", "flex");
+    $("#add-exp").css("display", "none");
+  })
+  $("#add-mexp").click(function(){
+    $("#mexp-content").css("display", "none");
+    $("#add-exp").css("display", "flex");
+  })
   $("#signup-form").submit(function(e){
     e.preventDefault()
     console.log("Enters");
@@ -142,6 +154,10 @@ $(document).ready(function(){
     if (value == ""){
       $("#experiences-container .exp-container").show()
     }
+  })
+  $("#mexp-form").submit(function(){
+    let title = document.getElementById("mexp-new-title").value;
+    let location = 0;
   })
 });
 
