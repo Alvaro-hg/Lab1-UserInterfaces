@@ -194,10 +194,80 @@
     	<img class="header-images" src="./images/Map.png" usemap="#worldmap" alt="map">
     	<map name="worldmap">
   			<area shape="rect" coords="706,255,730,290" alt="London" href="B&B.html">
-  			<area shape="rect" coords="705,330,725,365" alt="Spain" href="Godai.html">
+  			<area shape="rect" id="godai-area" coords="705,330,725,365" alt="Spain" href="#">
   			<area shape="rect" coords="955,420,975,430" alt="EAU" href="nusr-et.html">
 		</map>
-  	</div>
+  </div>
+
+	<!-- ###### Popup Godai ######-->
+	<div class="popup" id="godai-popup">
+		<div class="popup-content">
+			<!--<ion-icon name="close-outline" class="close"></ion-icon>-->
+			<button class="close" id="godai-close">&times;</button>
+			<div class="exp-popup">
+				<!-- This section is to put the header image of the page-->
+				<div>
+			    	<img class="header-images" src="./images/godai-header.png" alt="godai restaurant">
+			  </div>
+
+				<!-- This section is to put the title and description of the restaurant-->
+				<div class="description-container">
+					<h1 class="desc-title">GODAI MENORCA</h1>
+					<p class="desc-text">Godai is an exclusive japanese restaurant located in the 5 stars hotel Suites del Lago, Menorca.
+					It offers the very personal cuisine of the chef Julián Mármol, who owns a Michelín star in his restaurant Yugo the
+					Bunker in Madrid. His vocation is to assemble the Menorca products with the techniques and procedures of the Japanese
+					cuisine and obtain a Michelin star for it too. The restaurant offers several tasting menus of this unique cuisine,
+					described as a “Fusion without confusion” by the chef.<br><br><!-- New line-->
+					The terrace where Godai is placed is wonderful. Clients can enjoy the views of the Cala’n Bosch Marina, where they can
+					book for boat trips or even rent a boat to enjoy and visit some of the most beautiful coves in the isle (Cala Galdana,
+					Cala Macarella, Cala Turqueta,...).<br><br><!-- New line-->
+					The restaurant was inaugurated only a few months ago (summer 2021) but it has already reached a high status and popularity.
+					It is known that some celebrities, such as Cristiano Ronaldo, have been tasting this excellent menorquina-japanese food.<br>
+					The menu and the trip itself might be a bit expensive but for anyone who can afford this experience, it is completely
+					worth it to visit Menorca and try the unique and tasty cuisine offered by Godai.
+			</p>
+				</div>
+
+				<!-- This section is to show all the media from the restaurant. It is display in five columns-->
+				<h2 id="media">Media:</h2>
+
+				<div class="row">
+					<div class="column">
+						<img src="./images/godai-1.png" alt="godai">
+						<video controls>
+							<source src="./images/menorca1.mov">
+						</video>
+					</div>
+					<div class="column">
+						<img src="./images/godai-2.png" alt="godai">
+						<img src="./images/godai-6.jpg" alt="godai">
+						<iframe src="https://www.youtube.com/embed/INGlyjVtPk8" title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+						gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column">
+						<img src="./images/godai-3.png" alt="godai">
+						<img src="./images/godai-7.jpg" alt="godai">
+						<iframe src="https://www.youtube.com/embed/8ggI9Ellwwg" title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+						gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column">
+						<img src="./images/menorca.JPG" alt="godai">
+						<iframe src="https://www.youtube.com/embed/puFJDjJfvTE" title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+						gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column">
+						<img src="./images/bowl_godai.png" alt="godai">
+						<video controls>
+							<source src="./images/menorca2.mov">
+						</video>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 		<!-- ###### Search section ######-->
 		<!-- This section contains the serach bar for the experiences-->

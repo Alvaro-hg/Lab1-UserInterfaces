@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $("#experinces-container").sortable();
   $("#login-button").click(function(){
     openPopUp("#login-popup")
   })
@@ -10,6 +11,13 @@ $(document).ready(function(){
   })
   $("#signup-close").click(function(){
     closePopUp("#signup-popup")
+  })
+  $("#godai-area").click(function(e){
+    e.preventDefault();
+    openPopUp("#godai-popup")
+  })
+  $("#godai-close").click(function(){
+    closePopUp("#godai-popup")
   })
   $("#signup-form").submit(function(e){
     e.preventDefault()
@@ -100,9 +108,6 @@ $(document).ready(function(){
     $("#experiences-container .exp-container").filter(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
-  })
-  $(function(){
-    $("#experinces-container").draggable();
   })
 });
 
