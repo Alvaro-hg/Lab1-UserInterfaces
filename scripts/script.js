@@ -33,6 +33,12 @@ $(document).ready(function(){
   $("#nusr-close").click(function(){
     closePopUp("#nusr-popup")
   })
+  $(".open-with-title").click(function(){
+    openPopUp("#godai-popup");
+  })
+  $(".open-with-img").click(function(){
+    openPopUp("#bb-popup");
+  })
   $("#signup-form").submit(function(e){
     e.preventDefault()
     console.log("Enters");

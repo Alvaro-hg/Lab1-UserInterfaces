@@ -799,3 +799,11 @@ of all the links and the structure of them*/
   border-radius: 10px;
   cursor: pointer;
 }
+
+.open-with-title {
+  cursor: pointer;
+}
+
+.open-with-img {
+  cursor: pointer;
+}
