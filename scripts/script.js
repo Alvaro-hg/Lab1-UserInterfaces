@@ -61,7 +61,16 @@ $(document).ready(function(){
     let password = document.getElementById("password").value;
     let dob = document.getElementById("dob").value;
     let interest = "";
-    let image = document.querySelector("#profile-img").value;
+    let image = document.querySelector("#profile-img");
+    let filetype = ""
+    console.log(image.files);
+    if (image.files.length != 0){
+      filetype = image.files[0];
+      image = image.value;
+    } else {
+      image = "";
+    }
+    console.log(image);
     interest += document.getElementById("interest1").checked + ",";
     interest += document.getElementById("interest2").checked + ",";
     interest += document.getElementById("interest3").checked + ",";
@@ -76,6 +85,7 @@ $(document).ready(function(){
       getProfile(result.split(","), email);
       closePopUp("#signup-popup");
       $("#signup-form")[0].reset();
+      addImage(filetype, "#user-pic");
     }
   })
   $("#login-b").click(function(){
@@ -179,6 +189,22 @@ function changeToUser(cookie_val){
   $(".navbar-button").hide();
   $("#user-username").html(cookie_val[2]);
   $("#user-logged").show();
+}
+
+function addImage(image, id){
+  if (image == ""){
+    $(id).attr("src", "./image/default.png");
+  } else {
+    let reader = new FileReader();
+    let imageb64 = ""
+
+    reader.onloadend = function (){
+      imageb64 = reader.result;
+      $(id).attr("src", imageb64);
+    }
+    reader.readAsDataURL(image);
+    console.log(imageb64);
+  }
 }
 
 function logout(){
