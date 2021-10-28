@@ -119,9 +119,23 @@ $(document).ready(function(){
   })
   $("#sbutton").click(function(){
     var value = $("#stext").val().toLowerCase();
+    var showingDivs = 0;
     $("#experiences-container .exp-container").filter(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      if ($(this).css("display") != "none"){
+        showingDivs += 1;
+      }
     });
+    if (showingDivs == 0){
+      alert("No food experience was founded");
+      $("#experiences-container .exp-container").show()
+    }
+  })
+  $("#stext").on("input", function(){
+    var value = $(this).val().toLowerCase();
+    if (value == ""){
+      $("#experiences-container .exp-container").show()
+    }
   })
 });
 
