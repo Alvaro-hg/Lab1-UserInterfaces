@@ -19,6 +19,20 @@ $(document).ready(function(){
   $("#godai-close").click(function(){
     closePopUp("#godai-popup")
   })
+  $("#bb-area").click(function(e){
+    e.preventDefault();
+    openPopUp("#bb-popup")
+  })
+  $("#bb-close").click(function(){
+    closePopUp("#bb-popup")
+  })
+  $("#nusr-area").click(function(e){
+    e.preventDefault();
+    openPopUp("#nusr-popup")
+  })
+  $("#nusr-close").click(function(){
+    closePopUp("#nusr-popup")
+  })
   $("#signup-form").submit(function(e){
     e.preventDefault()
     console.log("Enters");

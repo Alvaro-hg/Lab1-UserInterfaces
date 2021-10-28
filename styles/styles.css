@@ -199,6 +199,7 @@ hover or when the page is the current one*/
   padding: 5px;
   border-radius: 25px;
   border: none;
+  cursor: pointer;
 }
 /*################### END SEARCH PART ###################*/
 
@@ -226,6 +227,7 @@ due to margins to separate them*/
   background-color: #D2D2D2;
   border-radius: 25px;
   box-shadow: 5px 10px 10px #F7AD3F;
+  min-height: 500px;
 }
 
 .exp-container > div {
