@@ -910,20 +910,20 @@ of all the links and the structure of them*/
 .new-exp {
   background-color: #F7AD3F;
   display: flex;
-  min-height: 150px;
+  min-height: 200px;
   border-radius: 10px;
   margin: 0px 10px 10px 10px;
 }
 
 .new-exp-img-container {
   width: 150px;
-  height: 150px;
+  height: 200px;
   flex-grow: 1;
 }
 
 .new-exp-img {
   width: 150px;
-  height: 150px;
+  height: 200px;
   border-radius: 10px 0px 0px 10px;
   object-fit: cover;
 }
