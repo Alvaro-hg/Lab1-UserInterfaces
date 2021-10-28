@@ -458,8 +458,25 @@ of all the links and the structure of them*/
   }
 
   #signup-container{
-    width: 400px;
-    height: 500px;
+    max-width: 400px;
+    max-height: 500px;
+  }
+
+  #profile-container{
+    max-width: 400px;
+    max-height: 500px;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .profile-div {
+    width: 90%;
+    margin: 0px;
+  }
+
+  #user-menu {
+    left: 0;
   }
 }
 
@@ -596,9 +613,12 @@ of all the links and the structure of them*/
   display: none;
 }
 
-#user-logged:hover #user-menu{
+#user-logged:hover{
   background-color: #D58B1D;
   color: #000000;
+}
+
+#user-logged:hover #user-menu {
   display: flex;
 }
 
@@ -633,14 +653,109 @@ of all the links and the structure of them*/
   object-fit: cover;
 }
 
-#user-menu, #user-logged {
-  background-color: #00FF00;
-}
-
-#user-menu {  
+#user-menu {
+  flex-direction: column;
   display: none;
   position: absolute;
   right: 0;
-  padding: 20px 45px;
   text-align: center;
+}
+
+.menu-button {
+  float: left;
+  padding: 20px 31px;
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 20px;
+  background-color: #D58B1D;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+}
+
+.menu-button:hover {
+  background-color: #B3690B;
+  color: #000000;
+}
+
+#profile-container {
+  height: 500px;
+  width: 800px;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  margin-top: 20px;
+}
+
+#profile-content{
+  flex-direction: column;
+}
+
+.profile-div{
+  background-color: #F7AD3F;
+  border-radius: 10px;
+  padding: 5px 40px;
+  width: 45%;
+  height: 100%;
+  margin: 10px 20px;
+}
+
+#profile-title{
+  margin: 20px auto 10px auto;
+  width: 100%;
+}
+
+.profile-subtitle{
+  padding: 5px 0px;
+}
+
+#profile-image {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 20px
+}
+
+#profile-pic {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+#profile-form{
+  width: 95%;
+}
+
+#profile-form p {
+  padding: 15px 0px;
+}
+
+#profile-personal p {
+  padding: 5px 0px;
+}
+
+.profile-input{
+  border-radius: 10px;
+  border: none;
+}
+
+#change-values{
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  padding: 0px 10px;
+  width: 60%;
+}
+
+#change-values > input {
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }

@@ -22,27 +22,18 @@ $(document).ready(function(){
     let dob = document.getElementById("dob").value;
     let interest = "";
     let image = document.querySelector("#profile-img").value;
-    if(document.getElementById("interest1").checked){
-      interest += document.getElementById("interest1").value + ",";
-    }
-    if(document.getElementById("interest2").checked){
-      interest += document.getElementById("interest2").value + ",";
-    }
-    if(document.getElementById("interest3").checked){
-      interest += document.getElementById("interest3").value + ",";
-    }
-    if(document.getElementById("interest4").checked){
-      interest += document.getElementById("interest4").value + ",";
-    }
-    if(document.getElementById("interest5").checked){
-      interest += document.getElementById("interest5").value + ",";
-    }
+    interest += document.getElementById("interest1").checked + ",";
+    interest += document.getElementById("interest2").checked + ",";
+    interest += document.getElementById("interest3").checked + ",";
+    interest += document.getElementById("interest4").checked + ",";
+    interest += document.getElementById("interest5").checked + ",";
     let result = setCookie(email, name, surname, username, password, dob, interest, image, 30);
     console.log(result);
     if (result == ""){
       $("#signup-form")[0].reset();
     } else {
       changeToUser(result.split(","));
+      getProfile(result.split(","), email);
       closePopUp("#signup-popup");
       $("#signup-form")[0].reset();
     }
@@ -54,7 +45,55 @@ $(document).ready(function(){
     console.log(checked);
     if (checked != "") {
       changeToUser(checked);
+      getProfile(checked, lemail);
     }
+  })
+  $("#my-profile").click(function(){
+    openPopUp("#my-profile-popup");
+  })
+  $("#profile-form").submit(function (e){
+    e.preventDefault();
+    let email = document.getElementById("profile-email").textContent;
+    console.log(email);
+    let result = getCookie(email);
+    result = result.split(",");
+    console.log(result);
+    let username = document.getElementById("new-username").value;
+    let image = document.getElementById("new-img").value;
+    let interests = "";
+    interests += document.getElementById("new-interest1").checked + ",";
+    interests += document.getElementById("new-interest2").checked + ",";
+    interests += document.getElementById("new-interest3").checked + ",";
+    interests += document.getElementById("new-interest4").checked + ",";
+    interests += document.getElementById("new-interest5").checked + ",";
+    const date = new Date();
+    date.setTime(date.getTime() + (30*24*60*60*1000));
+    let expires = "expires=" + date.toGMTString();
+    let cname = "";
+    cname += result[0] + "," + result[1] + ",";
+    if (username == ""){
+      cname += result[2] + ",";
+    } else {
+      cname += username + ",";
+      $("#user-username").html(username);
+    }
+    cname += result[3] + "," + result[4] + "," + interests;
+    if (image == ""){
+      cname += image;
+    } else {
+      cname += result[10];
+    }
+    document.cookie = email + "=" + cname +
+    ";" + expires + ";path=/";
+    document.getElementById("new-username").value = "";
+    document.getElementById("new-img").value = "";
+
+  })
+  $("#profile-close").click(function(){
+    closePopUp("#my-profile-popup");
+  })
+  $("#log-out").click(function(){
+    logout();
   })
   $("#sbutton").click(function(){
     var value = $("#stext").val().toLowerCase();
@@ -62,19 +101,12 @@ $(document).ready(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   })
+  $(function(){
+    $("#experinces-container").draggable();
+  })
 });
 
-function loadImage(image){
-  var uploaded_image = "";
-  image.addEventListener("change", function(){
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-      uploaded_image = reader.result;
-      document.querySelector("#user-pic").src = uploaded_image;
-    });
-    reader.readAsDataURL(this.files[0]);
-  })
-}
+$('img[usemap]').imageMap();
 
 function openPopUp(id) {
   $(id).fadeIn("slow");
@@ -89,9 +121,44 @@ function closePopUp(id){
 }
 
 function changeToUser(cookie_val){
-  $(".navbar-button").hide()
+  $(".navbar-button").hide();
   $("#user-username").html(cookie_val[2]);
   $("#user-logged").show();
+}
+
+function logout(){
+  confirm("Do you really want to exit?")
+  $(".navbar-button").show();
+  $("#user-username").html("");
+  $("#user-logged").hide();
+}
+
+function getProfile(data, email){
+  $("#profile-name").html(data[0]);
+  $("#profile-surname").html(data[1]);
+  $("#profile-email").html(email);
+  $("#profile-dob").html(data[4]);
+  console.log(data[5]);
+  console.log(data[6]);
+  console.log(data[7]);
+  console.log(data[8]);
+  console.log(data[9]);
+  if (data[5] == "true"){
+    $("#new-interest1").attr("checked", "checked");
+  }
+  if (data[6] == "true"){
+    $("#new-interest2").attr("checked", "checked");
+  }
+  if (data[7] == "true"){
+    $("#new-interest3").attr("checked", "checked");
+  }
+  if (data[8] == "true"){
+    $("#new-interest4").attr("checked", "checked");
+  }
+  if (data[9] == "true"){
+    $("#new-interest5").attr("checked", "checked");
+  }
+
 }
 
 function setCookie(email, name, surname, username, password, dob, interests, image, exdays){
