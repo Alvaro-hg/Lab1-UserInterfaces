@@ -417,6 +417,13 @@ of all the links and the structure of them*/
     max-width: 770px;
   }
 }
+
+@media screen and (max-width: 900px){
+  #mexp-container{
+    max-width: 770px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #navbar .navbar-button.float-right {
     float: left;
@@ -436,6 +443,18 @@ of all the links and the structure of them*/
 
   .exp-popup {
     max-width: 600px;
+  }
+
+  #mexp-container{
+    max-width: 600px;
+  }
+
+  #profile-container {
+    max-width: 600px;
+    max-height: 500px;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 
@@ -499,6 +518,10 @@ of all the links and the structure of them*/
     overflow-y: scroll;
     flex-wrap: wrap;
     flex-direction: column;
+  }
+
+  #mexp-container{
+    max-width: 400px;
   }
 
   .profile-div {
@@ -568,6 +591,7 @@ of all the links and the structure of them*/
   box-sizing: border-box;
   font-size: 16px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .login-input{
@@ -760,8 +784,8 @@ of all the links and the structure of them*/
 }
 
 #profile-pic {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100px;
+  height: 100px;
   border-radius: 50px;
   object-fit: cover;
 }
@@ -837,10 +861,12 @@ of all the links and the structure of them*/
   border-radius: 10px;
   background-color: #F7AD3F;
   font-size: 15px;
+  cursor: pointer;
 }
 
 #list-experiences{
   overflow-y: scroll;
+  height: 450px;
 }
 
 #add-exp{
@@ -916,13 +942,12 @@ of all the links and the structure of them*/
 }
 
 .new-exp-img-container {
-  width: 150px;
+  width: 20%;
   height: 200px;
-  flex-grow: 1;
 }
 
 .new-exp-img {
-  width: 150px;
+  width: 100%;
   height: 200px;
   border-radius: 10px 0px 0px 10px;
   object-fit: cover;
@@ -933,7 +958,7 @@ of all the links and the structure of them*/
   flex-direction: column;
   text-align: left;
   margin: 10px 0px 10px 10px;
-  flex-grow: 3;
+  width: 75%;
 }
 
 .loc-and-title{
@@ -947,17 +972,18 @@ of all the links and the structure of them*/
 }
 
 .new-exp-delete {
-  flex-grow: 1;
+  width: 5%;
   display: flex;
   align-items: center;
 }
 
 .del-new-exp{
   height: 100%;
-  width: 40px;
+  width: 100%;
   padding: 0px 5px;
   border-radius: 0px 10px 10px 0px;
   background-color: #000000;
   color: #FFFFFF;
   font-size: 30px;
+  cursor: pointer;
 }

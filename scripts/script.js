@@ -1,3 +1,6 @@
+var imageUrl = "";
+var numOfDivs = 0;
+
 $(document).ready(function(){
   $("#experinces-container").sortable();
   $("#login-button").click(function(){
@@ -52,8 +55,7 @@ $(document).ready(function(){
     $("#add-exp").css("display", "flex");
   })
   $("#signup-form").submit(function(e){
-    e.preventDefault()
-    console.log("Enters");
+    e.preventDefault();
     let email = document.getElementById("email").value;
     let name = document.getElementById("name").value;
     let surname = document.getElementById("surname").value;
@@ -63,21 +65,19 @@ $(document).ready(function(){
     let interest = "";
     let image = document.querySelector("#profile-img");
     let filetype = ""
-    console.log(image.files);
     if (image.files.length != 0){
       filetype = image.files[0];
-      image = image.value;
     } else {
-      image = "";
+      filetype = "";
     }
-    console.log(image);
+    addImage(filetype, "#user-pic");
+    addImage(filetype, "#profile-pic");
     interest += document.getElementById("interest1").checked + ",";
     interest += document.getElementById("interest2").checked + ",";
     interest += document.getElementById("interest3").checked + ",";
     interest += document.getElementById("interest4").checked + ",";
     interest += document.getElementById("interest5").checked + ",";
-    let result = setCookie(email, name, surname, username, password, dob, interest, image, 30);
-    console.log(result);
+    let result = setCookie(email, name, surname, username, password, dob, interest, image.value, 30);
     if (result == ""){
       $("#signup-form")[0].reset();
     } else {
@@ -85,14 +85,12 @@ $(document).ready(function(){
       getProfile(result.split(","), email);
       closePopUp("#signup-popup");
       $("#signup-form")[0].reset();
-      addImage(filetype, "#user-pic");
     }
   })
   $("#login-b").click(function(){
     let lemail = document.getElementById("lemail").value;
     let lpassword = document.getElementById("lpassword").value;
     let checked = checkCookie(lemail, lpassword);
-    console.log(checked);
     if (checked != "") {
       changeToUser(checked);
       getProfile(checked, lemail);
@@ -109,7 +107,13 @@ $(document).ready(function(){
     result = result.split(",");
     console.log(result);
     let username = document.getElementById("new-username").value;
-    let image = document.getElementById("new-img").value;
+    let image = document.getElementById("new-img");
+    let filetype = ""
+    if (image.files.length != 0){
+      filetype = image.files[0];
+    } else {
+      filetype = "";
+    }
     let interests = "";
     interests += document.getElementById("new-interest1").checked + ",";
     interests += document.getElementById("new-interest2").checked + ",";
@@ -128,8 +132,10 @@ $(document).ready(function(){
       $("#user-username").html(username);
     }
     cname += result[3] + "," + result[4] + "," + interests;
-    if (image == ""){
-      cname += image;
+    if (image.value != ""){
+      cname += image.value;
+      addImage(filetype, "#user-pic");
+      addImage(filetype, "#profile-pic");
     } else {
       cname += result[10];
     }
@@ -143,6 +149,8 @@ $(document).ready(function(){
     closePopUp("#my-profile-popup");
   })
   $("#log-out").click(function(){
+    $("#user-pic").attr("src", "./images/default.png");
+    $("#profile-pic").attr("src", "./images/default.png");
     logout();
   })
   $("#sbutton").click(function(){
@@ -165,9 +173,25 @@ $(document).ready(function(){
       $("#experiences-container .exp-container").show()
     }
   })
-  $("#mexp-form").submit(function(){
+  $("#mexp-form").submit(function(e){
+    e.preventDefault();
     let title = document.getElementById("mexp-new-title").value;
-    let location = 0;
+    let location = document.getElementById("mexp-place").value;
+    let desc = document.getElementById("mexp-desc").value;
+    let image = document.getElementById("mexp-img");
+    let filetype = ""
+    if (image.files.length != 0){
+      filetype = image.files[0];
+    } else {
+      filetype = "";
+    }
+    addExperience(title, location, desc, filetype);
+    document.getElementById("mexp-new-title").value = "";
+    document.getElementById("mexp-place").value = "";
+    document.getElementById("mexp-desc").value = "";
+    document.getElementById("mexp-img").value = "";
+    $("#mexp-content").css("display", "flex");
+    $("#add-exp").css("display", "none");
   })
 });
 
@@ -196,15 +220,33 @@ function addImage(image, id){
     $(id).attr("src", "./image/default.png");
   } else {
     let reader = new FileReader();
-    let imageb64 = ""
 
     reader.onloadend = function (){
-      imageb64 = reader.result;
-      $(id).attr("src", imageb64);
+      imageUrl = reader.result;
+      $(id).attr("src", imageUrl);
     }
     reader.readAsDataURL(image);
-    console.log(imageb64);
   }
+}
+
+function addExperience(title, location, desc, image){
+  let newhtml = '<div class="new-exp" id="experience' + numOfDivs + '">';
+  newhtml += '<div class="new-exp-img-container"><img class="new-exp-img" id="expimage' + numOfDivs + '" src="" alt="experience"></div>';
+  newhtml += '<div class="new-exp-text"><div class="loc-and-title"><h3 class="new-exp-title">' + title + '</h3><h5>(' + location + ')</h5>';
+  newhtml += '</div><p class="new-exp-desc">' + desc + '</p></div><div class="new-exp-delete" onclick=removeExp("#experience' + numOfDivs + '")>';
+  newhtml += '<ion-icon class="del-new-exp" name="trash"></ion-icon></div></div>';
+
+  $("#list-experiences").prepend(newhtml);
+  let id_image = "#expimage" + numOfDivs;
+  addImage(image, id_image);
+
+  numOfDivs += 1;
+
+}
+
+function removeExp(id){
+  $(id).remove();
+  numOfDivs -= 1;
 }
 
 function logout(){
@@ -219,11 +261,6 @@ function getProfile(data, email){
   $("#profile-surname").html(data[1]);
   $("#profile-email").html(email);
   $("#profile-dob").html(data[4]);
-  console.log(data[5]);
-  console.log(data[6]);
-  console.log(data[7]);
-  console.log(data[8]);
-  console.log(data[9]);
   if (data[5] == "true"){
     $("#new-interest1").attr("checked", "checked");
   }
@@ -244,7 +281,6 @@ function getProfile(data, email){
 
 function setCookie(email, name, surname, username, password, dob, interests, image, exdays){
   let exists = getCookie(email);
-  console.log(exists)
   if (exists == ""){
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
