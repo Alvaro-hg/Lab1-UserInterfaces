@@ -226,10 +226,10 @@ hover or when the page is the current one*/
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 3%;
   justify-content: center;
   padding: 10px;
   margin: 30px auto;
+  gap: 3%;
 }
 
 /*Each of the experinces container with all its style. It does not ocupy 33.33%

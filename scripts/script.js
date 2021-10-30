@@ -2,7 +2,9 @@ var imageUrl = "";
 var numOfDivs = 0;
 
 $(document).ready(function(){
-  $("#experinces-container").sortable();
+  $(".container-experiences").sortable({
+    helper: "clone",
+  })
   $("#login-button").click(function(){
     openPopUp("#login-popup")
   })
