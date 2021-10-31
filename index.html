@@ -29,10 +29,11 @@
 	<!-- This section contains the links to move through the webpage and the log in and sugn up buttons -->
 	<nav>
 		<div id="navbar">
-				<!-- First of all the common links home, contact and about with respective icons-->
+			<!-- First of all the common links home, contact and about with respective icons-->
     		<a class="active" href="#top"><ion-icon class="icon" name="home-outline"></ion-icon>Home</a>
     		<a href=""><ion-icon class="icon" name="information-outline"></ion-icon>About Us</a>
     		<a href="#footer-container"><ion-icon class="icon" name="mail-outline"></ion-icon>Contact</a>
+    			<!-- Sign up and login button that are not actually buttons-->
 				<div class="navbar-button float-right" id="signup-button">
 						<ion-icon name="log-in-outline"></ion-icon>
 						<p>Sign up</p>
@@ -41,6 +42,8 @@
 						<ion-icon name="person-circle-outline"></ion-icon>
     				<p>Log in</p>
 				</div>
+				<!-- Div only active when the user is logged-->
+				<!-- It contains the profile pic the user-name and the menu active on hover-->
 				<div id="user-logged">
 					<div id="logged-container">
 						<p id="user-username"></p>
@@ -73,6 +76,7 @@
   		</div>
 	</nav>
 	<!-- ###### Popup section ######-->
+	<!-- Login popup. Consists of a simple form where email and password need to be introduce-->
 	<div class="popup" id="login-popup">
 		<div class="popup-content">
 			<!--<ion-icon name="close-outline" class="close"></ion-icon>-->
@@ -88,6 +92,7 @@
 		</div>
 	</div>
 
+	<!-- Sign up popup. It contains a larger form scrollable in the y axis -->
 	<div class="popup" id="signup-popup">
 		<div class="popup-content">
 			<button class="close" id="signup-close">&times;</button>
@@ -141,11 +146,13 @@
 		</div>
 	</div>
 
+	<!-- Profile popup. It contains two different sections: the info show section and the section to change some aspects of the user profile-->
 	<div class="popup" id="my-profile-popup">
 		<div class="popup-content" id="profile-content">
 			<button class="close" id="profile-close">&times;</button>
 			<h2 id="profile-title">My profile</h2>
 			<div id="profile-container">
+				<!-- This contains the personal info part-->
 				<div class="profile-div" id="profile-personal">
 					<h3 class="profile-subtitle">Personal information:</h3>
 					<div id="profile-image">
@@ -161,6 +168,7 @@
 					<p id="profile-dob"></p>
 				</div>
 				<div class="profile-div">
+					<!-- This contains the form to change username image or interests. It is filled with the already selected interests-->
 					<h3 class="profile-subtitle">Change fields:</h3>
 					<form id="profile-form">
 						<p>Change username:</p>
@@ -187,13 +195,16 @@
 		</div>
 	</div>
 
+	<!-- My experiences popup. It contains both the section to show the experiences and the section to add new ones-->
 	<div class="popup" id="my-experiences-popup">
 		<div class="popup-content" id="mexp-container">
 			<button class="close" id="mexp-close">&times;</button>
 			<h2 id="mexp-title">My experiences</h2>
+			<!-- This contains the part to show all the experiences--> 
 			<div id="mexp-content">
 				<div><input type="button" id="add-mexp" name="add-my-experience" value="Add a new experience"></div>
 				<div id="list-experiences">
+					<!-- HTML example of a new experience created. It looks much more messy in the javascript-->
 					<!--<div class="new-exp">
 						<div class="new-exp-img-container">
 							<img class="new-exp-img" src="./images/B&B.png" alt="experience">
@@ -214,6 +225,7 @@
 					</div>-->
 				</div>
 			</div>
+			<!-- This contains the form to add a new experience-->
 			<div id="add-exp">
 				<h3 id="mexp-subtitle">Add new experience</h3>
 				<form id="mexp-form">
